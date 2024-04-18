@@ -1,6 +1,5 @@
 package com.example.testingtesting123
 
-import org.junit.Assert.*
 
 import org.junit.Before
 import org.junit.Test
@@ -44,6 +43,15 @@ class UniqueCollectionTest {
         val initialSize = collection.size()
         collection.remove(Item("Item1"))
         assert (collection.size()==initialSize-1)
+    }
+
+    @Test
+    fun removeItemNotInList(){
+        collection.addItem(Item("Item1"))
+        collection.addItem(Item("Item2"))
+        val initialSize = collection.size()
+        collection.remove(Item("Item3"))
+        assert (collection.size()==initialSize)
     }
 
     @Test
