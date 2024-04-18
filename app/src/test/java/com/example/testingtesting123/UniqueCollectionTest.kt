@@ -38,6 +38,15 @@ class UniqueCollectionTest {
     }
 
     @Test
+    fun removePlacedItemFromList(){
+        collection.addItem(Item("Item1"))
+        collection.addItem(Item("Item2"))
+        val initialSize = collection.size()
+        collection.remove(Item("Item1"))
+        assert (collection.size()==initialSize-1)
+    }
+
+    @Test
     fun clearAllItems() {
         collection.addItem(Item("item1"))
         collection.addItem(Item("Item2"))
